@@ -1,0 +1,19 @@
+.frame {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+    position: relative;
+}
+
+.main_contents {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: chartreuse;
+    width: 450px;
+    height: 450px;
+}

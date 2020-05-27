@@ -1,0 +1,25 @@
+.contents {
+    text-align: left;
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 305px;
+    height: 50px;
+    background-color: white;
+    border: solid 1px;
+    font-size: 28px;
+}
+
+.result_text {
+    display: inline-block;
+    width: 80%;
+    vertical-align: middle;
+    background-color: red;
+}
+
+.operator_text {
+    display: inline-block;
+    width: 20%;
+    vertical-align: middle;
+    background-color: coral;
+    text-align: right;
+}

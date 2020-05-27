@@ -1,7 +1,7 @@
 .frame {
     margin: auto;
     width: 500px;
-    height: 500px;
+    height: 550px;
     background-color: aqua;
     position: relative;
 }
@@ -15,5 +15,5 @@
     margin: auto;
     background-color: chartreuse;
     width: 450px;
-    height: 450px;
+    height: 500px;
 }

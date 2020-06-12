@@ -4,7 +4,7 @@ import '../css/NumberBtn.css';
 class NumberBtn extends React.Component {
 
     btnClick() {
-        this.props.hendleNumberBtnClick(this.props.number);
+        //this.props.hendleNumberBtnClick(this.props.number);
     }
 
     render() {

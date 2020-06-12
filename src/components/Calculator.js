@@ -10,17 +10,23 @@ class Calculator extends React.Component {
         super(props);
 
         this.state = {
-            number: 0,
+            num1: "0",
+            num2: "0",
             operator: "",
-            result: 0,
+            result: "0",
         }
     }
 
     hendleNumberBtnClick(number) {
 
-        this.setState({number: number});
+        if(this.state.operator === "") {
+            let value = this.state.num1 === "0" ? number : this.state.num1 + number;
+            this.setState({num1: value});
+        } else {
+            this.setState({num2: this.state.num2 + number});
+        }
 
-        this.setState({result: number});
+        this.setState({result: this.state.num1});
     }
 
     hendleOperatorBtnClick(operator) {
@@ -35,28 +41,30 @@ class Calculator extends React.Component {
                         result={this.state.result}
                         operator={this.state.operator} />
                     <table>
-                        <tr>
-                            <th><NumberBtn number="7" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><NumberBtn number="8" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><NumberBtn number="9" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><OperatorBtn operator="×" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
-                        </tr>
-                        <tr>
-                            <th><NumberBtn number="4" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><NumberBtn number="5" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><NumberBtn number="6" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><OperatorBtn operator="-" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
-                        </tr>
-                        <tr>
-                            <th><NumberBtn number="1" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><NumberBtn number="2" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><NumberBtn number="3" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><OperatorBtn operator="+" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
-                        </tr>
-                        <tr>
-                            <th><NumberBtn number="0" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
-                            <th><OperatorBtn operator="=" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <th><NumberBtn number="7" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><NumberBtn number="8" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><NumberBtn number="9" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><OperatorBtn operator="×" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
+                            </tr>
+                            <tr>
+                                <th><NumberBtn number="4" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><NumberBtn number="5" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><NumberBtn number="6" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><OperatorBtn operator="-" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
+                            </tr>
+                            <tr>
+                                <th><NumberBtn number="1" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><NumberBtn number="2" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><NumberBtn number="3" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><OperatorBtn operator="+" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
+                            </tr>
+                            <tr>
+                                <th><NumberBtn number="0" hendleNumberBtnClick={this.hendleNumberBtnClick.bind(this)} /></th>
+                                <th><OperatorBtn operator="=" hendleOperatorBtnClick={this.hendleOperatorBtnClick.bind(this)} /></th>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
